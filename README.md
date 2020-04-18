@@ -1,2 +1,2 @@
 # WebpackExercises
-ExerciseWebpack
+Exercise Webpack
