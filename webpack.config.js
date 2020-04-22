@@ -1,6 +1,7 @@
 // package already exists within node.js installation
 //this path requirers absolute pat to the place whre an output file should be written to
 const path = require('path'); // this is a node.js syntax
+const autoprefixer = require('autoprefixer');
 
 // doc on: https://webpack.js.org/
 module.exports = {
@@ -39,6 +40,10 @@ module.exports = {
                         modules: {
                             loaclIdentName: '[name]__[local]__[hash:base64:5]'
                         }
+                    } },
+                    { loader: 'postcss-loader', options: {
+                        ident: 'postcss',
+                        plugins: () => [autoprefixer()]
                     } }
                 ]
             }
