@@ -27,4 +27,4 @@ class App extends Component {
     }
 }
 
-export default Pizza;
+export default App;
