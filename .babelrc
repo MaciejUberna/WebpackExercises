@@ -1,0 +1,19 @@
+//Always use "" double-quotes in here
+{
+    //in .babelrc we define what babel does.
+    "presets": [
+        ["@babel/preset-env", {
+            "targets": {
+                //please babel compile the code so that it works in these browsers:
+                // https://github.com/browserslist/browserslist#queries
+                "browsers": ["> 1%","last 2 versions"]
+            }
+        }],
+        "@babel/preset-react"
+    ],
+    //plugins allows you to add extra configuration or extra behaviour
+    "plugins": [
+        //support proposal javascript syntax which is proposal stage and not officially supported yet
+        "@babel/plugin-proposal-class-properties"
+    ]
+}
