@@ -25,6 +25,22 @@ module.exports = {
                 //loader: tells webpack wihich tool takes over for this file ("babel-loader": "^8.1.0")
                 loader: 'babel-loader',
                 exclude: /node_modules/ //exclude node modules because we are not transforming any code there
+            },
+            {
+                test: /\.css$/, //css files
+                exclude: /node_modules/,
+                //we use multiple loaders
+                use: [
+                    //style loader is responsible for injecting css code into html file
+                    { loader: 'style-loader' },
+                    // css is responsible for underestanding our css imports
+                    { loader: 'css-loader', options: {
+                        importLoaders: 1,
+                        modules: {
+                            loaclIdentName: '[name]__[local]__[hash:base64:5]'
+                        }
+                    } }
+                ]
             }
         ]
     }
