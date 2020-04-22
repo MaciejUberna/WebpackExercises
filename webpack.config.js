@@ -15,5 +15,17 @@ module.exports = {
         publicPath: ''
     },
     //Its where sourse maps will be stored
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'cheap-module-eval-source-map',
+    //rules for babel
+    module: {
+        rules: [
+            {
+                // any file ended with .js will be affected by this rule
+                test: /\.js$/, // regular expression that tells which file extensions should be affected
+                //loader: tells webpack wihich tool takes over for this file ("babel-loader": "^8.1.0")
+                loader: 'babel-loader',
+                exclude: /node_modules/ //exclude node modules because we are not transforming any code there
+            }
+        ]
+    }
 };
