@@ -2,6 +2,7 @@
 //this path requirers absolute pat to the place whre an output file should be written to
 const path = require('path'); // this is a node.js syntax
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // doc on: https://webpack.js.org/
 module.exports = {
@@ -53,5 +54,12 @@ module.exports = {
 
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: __dirname + '/src/index.html',
+            filename: 'index.html',
+            inject: 'body'
+        })
+    ]
 };
