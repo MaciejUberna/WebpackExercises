@@ -37,7 +37,10 @@ module.exports = {
                     { loader: 'style-loader' },
                     // css is responsible for underestanding our css imports
                     { loader: 'css-loader', options: {
-                        importLoaders: 1
+                        importLoaders: 1,
+                        modules: {
+                            localIdentName: '[name]__[local]__[hash:base64:5]'
+                        }
                     } },
                     { loader: 'postcss-loader', options: {
                         ident: 'postcss',
