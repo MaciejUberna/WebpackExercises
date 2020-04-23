@@ -9,8 +9,8 @@ module.exports = {
     //first we set up an entry point.
     //__dirname is an absolute path tho the folder this file lives in
     entry: './src/index.js',
+    mode: 'development',
     output: {
-        mode: 'development',
         //the bundle file should be written to the 'dist' folder
         path: path.resolve(__dirname,'dist'),
         filename: 'bundle.js',
@@ -37,10 +37,7 @@ module.exports = {
                     { loader: 'style-loader' },
                     // css is responsible for underestanding our css imports
                     { loader: 'css-loader', options: {
-                        importLoaders: 1,
-                        modules: {
-                            loaclIdentName: '[name]__[local]__[hash:base64:5]'
-                        }
+                        importLoaders: 1
                     } },
                     { loader: 'postcss-loader', options: {
                         ident: 'postcss',
