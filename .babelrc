@@ -7,7 +7,8 @@
                 //please babel compile the code so that it works in these browsers:
                 // https://github.com/browserslist/browserslist#queries
                 "browsers": ["> 1%","last 2 versions"]
-            }
+            },
+            "useBuiltIns": "usage"
         }],
         "@babel/preset-react"
     ],
